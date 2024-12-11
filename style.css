@@ -274,6 +274,11 @@ a {
   display: inline-block;
 }
 
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 /* Media */
 
 @media only screen and (max-width: 600px) {
