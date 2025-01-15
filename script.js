@@ -80,12 +80,11 @@ function sendRegistration() {
   );
 }
 
-var copy = document.querySelector(".logo-slide").cloneNode(true);
-document.querySelector(".logos").appendChild(copy);
+// Modal HTML Script
+// var copy = document.querySelector(".logo-slide").cloneNode(true);
+// document.querySelector(".logos").appendChild(copy);
 
-document.addEventListener("DOMContentLoaded", function () {
-  var myModal = new bootstrap.Modal(
-    document.getElementById("punschstandModal")
-  );
-  myModal.show();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   var myModal = new bootstrap.Modal(document.getElementById("popUpInfoModal"));
+//   myModal.show();
+// });
