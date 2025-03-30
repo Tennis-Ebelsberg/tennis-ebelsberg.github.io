@@ -106,6 +106,21 @@
   color: #f7fcf9ff !important;
 }
 
+.regular-btn-topspin {
+  background-color: #25aed2;
+  color: #f7fcf9ff;
+}
+
+.regular-btn-topspin:hover {
+  background-color: #1c809a;
+  color: #f7fcf9ff;
+}
+
+.regular-btn-topspin:active {
+  background-color: #1c809a !important;
+  color: #f7fcf9ff !important;
+}
+
 .feature-card,
 .feature-card-img-top {
   border-radius: 0;
