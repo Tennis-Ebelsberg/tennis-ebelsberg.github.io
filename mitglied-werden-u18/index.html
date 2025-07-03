@@ -1,121 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/87a3773bab.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/87a3773bab.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/style.css" />
     <title>Tennis Ebelsberg</title>
-    <link rel="icon" href="/media/logos/askoe-ebelsberg-logo.png" type="image/jpg">
-</head>
+    <link
+      rel="icon"
+      href="/media/logos/askoe-ebelsberg-logo.png"
+      type="image/jpg"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="navbar-placeholder" class="sticky-top"></div>
 
     <section>
-        <div class="container mt-5">
-            <h2 class="mb-4">Anmeldung unter 18</h2>
-            <p>Der/Die AntragstellerIn ersucht um Aufnahme in den ASKÖ Ebelsberg Tennis als:</p>
-            <form>
-                <div class="input-container">
-                    <input type="text" id="vorname" required>
-                    <label for="vorname" class="label">Vorname*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="nachname" required>
-                    <label for="nachname" class="label">Nachname*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="adresse" required>
-                    <label for="adresse" class="label">Adresse*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="plz" required>
-                    <label for="plz" class="label">PLZ*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="ort" required>
-                    <label for="ort" class="label">Ort*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="geburtstag" required>
-                    <label for="geburtstag" class="label">Geburtstag* (TT.MM.JJJJ)</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="telefonnummer" required>
-                    <label for="telefonnummer" class="label">Telefonnummer*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="email" id="email" required>
-                    <label for="email" class="label">E-Mail-Adresse*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="vorname-erziehungsberechtigter" required>
-                    <label for="vorname-erziehungsberechtigter" class="label">Vorname Erziehungsberechtigter*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="nachname-erziehungsberechtigter" required>
-                    <label for="nachname-erziehungsberechtigter" class="label">Nachname Erziehungsberechtigter*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="adresse-erziehungsberechtigter" required>
-                    <label for="adresse-erziehungsberechtigter" class="label">Adresse Erziehungsberechtigter*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="plz-ort" required>
-                    <label for="plz-ort" class="label">Adresse, PLZ, Ort*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="telefonnummer-erziehungsberechtigter" required>
-                    <label for="telefonnummer-erziehungsberechtigter" class="label">Telefonnummer
-                        Erziehungsberechtigter*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container">
-                    <input type="email" id="email-erziehungsberechtigten" required>
-                    <label for="email-erziehungsberechtigten" class="label">E-Mail-Adresse
-                        Erziehungsberechtigten*</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="btn-container">
-                    <button type="button" class="btn regular-btn" onclick="sendRegistration()">Anmeldeformular
-                        senden</button>
-                </div>
-            </form>
+      <div class="container mt-5 mb-5">
+        <h2 class="mb-4">Anmeldung unter 18</h2>
+
+        <!-- Erfolgsnachricht -->
+        <div id="success-alert" class="alert alert-success d-none" role="alert">
+          Ihre Anmeldung wurde erfolgreich abgesendet!
         </div>
+
+        <p>
+          Der/Die AntragstellerIn ersucht um Aufnahme in den ASKÖ Ebelsberg
+          Tennis als:
+        </p>
+        <form>
+          <div class="input-container">
+            <input type="text" id="vorname" required />
+            <label for="vorname" class="label">Vorname*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="nachname" required />
+            <label for="nachname" class="label">Nachname*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="adresse" required />
+            <label for="adresse" class="label">Adresse*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="plz" required />
+            <label for="plz" class="label">PLZ*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="ort" required />
+            <label for="ort" class="label">Ort*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="geburtstag" required />
+            <label for="geburtstag" class="label"
+              >Geburtstag* (TT.MM.JJJJ)</label
+            >
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="telefonnummer" required />
+            <label for="telefonnummer" class="label">Telefonnummer*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="email" id="email" required />
+            <label for="email" class="label">E-Mail-Adresse*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="vorname-erziehungsberechtigter" required />
+            <label for="vorname-erziehungsberechtigter" class="label"
+              >Vorname Erziehungsberechtigter*</label
+            >
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="nachname-erziehungsberechtigter" required />
+            <label for="nachname-erziehungsberechtigter" class="label"
+              >Nachname Erziehungsberechtigter*</label
+            >
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="adresse-erziehungsberechtigter" required />
+            <label for="adresse-erziehungsberechtigter" class="label"
+              >Adresse Erziehungsberechtigter*</label
+            >
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="text" id="plz-ort" required />
+            <label for="plz-ort" class="label">Adresse, PLZ, Ort*</label>
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              id="telefonnummer-erziehungsberechtigter"
+              required
+            />
+            <label for="telefonnummer-erziehungsberechtigter" class="label"
+              >Telefonnummer Erziehungsberechtigter*</label
+            >
+            <div class="underline"></div>
+          </div>
+          <div class="input-container">
+            <input type="email" id="email-erziehungsberechtigten" required />
+            <label for="email-erziehungsberechtigten" class="label"
+              >E-Mail-Adresse Erziehungsberechtigten*</label
+            >
+            <div class="underline"></div>
+          </div>
+          <div class="btn-container">
+            <button
+              type="button"
+              class="btn regular-btn"
+              onclick="sendRegistration(); showSuccessMessage();"
+            >
+              Anmeldeformular senden
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
 
     <div id="modal-placeholder"></div>
 
     <div id="footer-placeholder"></div>
-</body>
-<script src="/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  </body>
+  <script src="/script.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
     (function () {
-        emailjs.init({
-            publicKey: "hlRnsqn1NmMthd2E2",
-        });
+      emailjs.init({
+        publicKey: "hlRnsqn1NmMthd2E2",
+      });
     })();
-</script>
 
+    function showSuccessMessage() {
+      const alertBox = document.getElementById("success-alert");
+      alertBox.classList.remove("d-none");
+      setTimeout(() => {
+        alertBox.classList.add("d-none");
+      }, 5000);
+    }
+  </script>
 </html>
